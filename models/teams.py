@@ -5,10 +5,10 @@ class Team:
         self.name = name
         self.players = []
         self.captain = None
-        self.home_ground = None
+        self.home_advantage = "home"
     
-    def set_home_ground(self, ground):
-        self.home_ground = ground
+    def set_home_advantage(self, home_advantage):
+        self.home_ground = home_advantage
 
     def add_player(self, player):
         # Add a player to the team

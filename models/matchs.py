@@ -1,4 +1,10 @@
-import umpire
+import os
+import sys
+
+
+
+import models.umpire as umpire
+
 
 class Match:
     def __init__(self, team1, team2, field):
@@ -8,13 +14,13 @@ class Match:
         self.current_innings = 1
         self.current_batting_team = None
         self.current_bowling_team = None
+        self.match_info = {}
         self.umpire = umpire.Umpire()
 
-    def start_match(self):
+    def set_innings(self, batting_team, bowling_team):
         # Select the batting and bowling teams for the first innings
-        self.current_batting_team = self.team1
-        self.current_bowling_team = self.team2
-        self.play_innings()
+        self.current_batting_team = batting_team
+        self.current_bowling_team = bowling_team
 
     def change_innings(self):
         # Swap the batting and bowling teams for the next innings
@@ -45,4 +51,21 @@ class Match:
 
     def is_innings_ended(self):
         # Check if the innings has ended based on the match situation
+        pass
+
+    def get_match_summary(self):
+        # Display the match summary
+        print("Match Summary")
+        print("-------------")
+        print(f"Venue: {self.field.field_name}")
+        print(f"Team 1: {self.team1.name}")
+        print(f"Team 2: {self.team2.name}")
+        print(f"Winner: {self.match_info['winner']}")
+
+    def get_match_info(self):
+        # Return the match info
+        return self.match_info
+    
+    def update_match_info(self, key, value):
+        # Update the match info
         pass

@@ -30,31 +30,17 @@ def generate_random_players():
             bowlers += 1
         else:
             all_rounders += 1
-        player_data = {
-            'name': name,
-            'bowling': bowling,
-            'batting': batting,
-            'fielding': fielding,
-            'running': running,
-            'experience': experience,
-            'speciality': player_object.speciality
-        }
-        players.append(player_data)
+
+        players.append(player_object)
 
     print(
         "batsmen:", batsmen, "bowlers:", bowlers, "all-rounders:", all_rounders)
     return players
 
 
-def dump_players_in_json(players):
-    # Save the list of players to a JSON file
-    filename = 'players.json'
-    with open(filename, 'w') as file:
-        json.dump(players, file, indent=4)
-
-    print(f"Player data saved to {filename} successfully.", )
-
-
 if __name__ == "__main__":
     players = generate_random_players()
-    dump_players_in_json(players)
+    players_json = [player.__dict__ for player in players]
+    with open('players.json', 'w') as file:
+        json.dump(players_json, file, indent=4)
+    
