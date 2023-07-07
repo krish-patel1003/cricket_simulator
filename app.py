@@ -72,22 +72,12 @@ def main():
     teamB_name = input("Enter Team B name: ")
     teamA, teamB = prepare_teams(teamA_name, teamB_name, field)
     
+    
     # Prepare the match and toss
     match = prepare_match(teamA, teamB, field)
 
     # Start the match
     match.start_match()
-
-
-
-    
-
-
-
-
-  
-
-
 
 
 
