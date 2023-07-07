@@ -1,3 +1,5 @@
+from utils import generate_a_random_field, generate_random_players, generate_random_teams
+from models import teams, fields, matchs, players, umpire
 import os
 import sys
 import json
@@ -6,24 +8,37 @@ import random
 path = os.path.join(os.path.dirname(__file__), os.pardir)
 sys.path.append(path)
 
-from models import teams, fields, matchs, players, umpire
-from utils import generate_a_random_field, generate_random_players, generate_random_teams
-
 
 def prepare_teams(teamA_name, teamB_name, field):
 
     # Generate random players
     players = generate_random_players.generate_random_players()
+    # print(players)
 
     # Create teams
-    teamA, teamB = generate_random_teams.create_teams(players, teamA_name, teamB_name)
+    teamA, teamB = generate_random_teams.create_teams(
+        players, teamA_name, teamB_name)
 
     if field.home_advantage == 1:
         teamA.set_home_advantage("away")
-    else:  
+    else:
         teamB.set_home_advantage("away")
 
     return teamA, teamB
+
+
+def prepare_innings(team_to_toss, other_team, match):
+
+    bat_or_bowl = int(
+        input(f"{team_to_toss.name} Choose bat(0) or bowl(1): "))
+    if bat_or_bowl == 0:
+        print(f"{team_to_toss.name} chose to bat first!")
+        match.set_innings(team_to_toss, other_team)
+    else:
+        print(f"{team_to_toss.name} chose to bowl first!")
+        match.set_innings(other_team, team_to_toss)
+
+
 
 
 def prepare_match(teamA, teamB, field):
@@ -46,14 +61,12 @@ def prepare_match(teamA, teamB, field):
 
     if toss_result:
         print(f"{team_to_toss.name} won the toss!")
-        bat_or_bowl = int(input(f"{team_to_toss.name} Choose bat(0) or bowl(1): "))
-        if bat_or_bowl == 0:
-            match.set_innings(team_to_toss, other_team)
-        else:
-            match.set_innings(other_team, team_to_toss)
-        
+        prepare_innings(team_to_toss, other_team, match)
 
-
+    else:
+        print(f"{other_team.name} won the toss!")
+        prepare_innings(other_team, team_to_toss, match)
+       
     return match
 
 
@@ -71,7 +84,14 @@ def main():
     teamA_name = input("Enter Team A name: ")
     teamB_name = input("Enter Team B name: ")
     teamA, teamB = prepare_teams(teamA_name, teamB_name, field)
-    
+
+    print("Team Details: ")
+    print(f"{teamA.name}: ")
+    teamA.print_team()
+    print(f"{teamB.name}: ")
+    teamB.print_team()
+
+
     
     # Prepare the match and toss
     match = prepare_match(teamA, teamB, field)

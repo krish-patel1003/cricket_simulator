@@ -13,6 +13,12 @@ class Team:
     def add_player(self, player):
         # Add a player to the team
         self.players.append(player)
+    
+    def print_team(self):
+        # Print the team
+        for player in self.players:
+            print(player.__dict__)
+        
 
     def select_captain(self):
         # Select a captain from the team's players
