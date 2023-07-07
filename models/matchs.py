@@ -31,6 +31,8 @@ class Match:
         # Simulate the innings
         print(
             f"Innings {self.current_innings} - {self.current_batting_team.name} batting")
+        
+        # playing innnings logic
         # while True:
         #     pass
         #     if self.is_innings_ended():

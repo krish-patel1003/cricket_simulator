@@ -1,272 +1,272 @@
 [
     {
         "name": "Player 1",
-        "bowling": 0.37,
-        "batting": 0.13,
-        "fielding": 0.21,
-        "running": 0.29,
-        "experience": 0.89,
+        "bowling": 0.57,
+        "batting": 0.26,
+        "fielding": 0.55,
+        "running": 0.53,
+        "experience": 0.45,
         "speciality": "bowler"
     },
     {
         "name": "Player 2",
-        "bowling": 0.47,
-        "batting": 0.18,
-        "fielding": 0.82,
-        "running": 0.38,
-        "experience": 0.53,
+        "bowling": 0.5,
+        "batting": 0.41,
+        "fielding": 0.67,
+        "running": 0.6,
+        "experience": 0.65,
         "speciality": "bowler"
     },
     {
         "name": "Player 3",
-        "bowling": 0.72,
-        "batting": 0.78,
-        "fielding": 0.35,
-        "running": 0.32,
-        "experience": 0.68,
-        "speciality": "all-rounder"
+        "bowling": 0.5,
+        "batting": 0.42,
+        "fielding": 0.33,
+        "running": 0.7,
+        "experience": 1.0,
+        "speciality": "bowler"
     },
     {
         "name": "Player 4",
-        "bowling": 0.27,
-        "batting": 0.56,
-        "fielding": 0.55,
-        "running": 0.16,
-        "experience": 0.69,
-        "speciality": "batsman"
+        "bowling": 0.62,
+        "batting": 0.91,
+        "fielding": 0.98,
+        "running": 0.53,
+        "experience": 0.24,
+        "speciality": "all-rounder"
     },
     {
         "name": "Player 5",
-        "bowling": 0.85,
-        "batting": 0.67,
-        "fielding": 0.82,
-        "running": 0.7,
-        "experience": 0.84,
+        "bowling": 0.77,
+        "batting": 0.66,
+        "fielding": 0.91,
+        "running": 0.88,
+        "experience": 0.7,
         "speciality": "all-rounder"
     },
     {
         "name": "Player 6",
-        "bowling": 0.57,
-        "batting": 0.69,
-        "fielding": 0.86,
-        "running": 0.86,
-        "experience": 0.96,
-        "speciality": "all-rounder"
+        "bowling": 0.46,
+        "batting": 0.61,
+        "fielding": 0.19,
+        "running": 0.3,
+        "experience": 0.65,
+        "speciality": "batsman"
     },
     {
         "name": "Player 7",
-        "bowling": 0.86,
-        "batting": 0.27,
-        "fielding": 0.63,
-        "running": 0.38,
-        "experience": 0.24,
-        "speciality": "bowler"
-    },
-    {
-        "name": "Player 8",
-        "bowling": 0.14,
-        "batting": 0.69,
-        "fielding": 0.37,
-        "running": 0.14,
-        "experience": 0.41,
-        "speciality": "batsman"
-    },
-    {
-        "name": "Player 9",
-        "bowling": 0.23,
-        "batting": 0.56,
-        "fielding": 0.65,
-        "running": 0.22,
-        "experience": 0.55,
-        "speciality": "batsman"
-    },
-    {
-        "name": "Player 10",
-        "bowling": 0.59,
-        "batting": 0.37,
-        "fielding": 0.12,
-        "running": 0.66,
-        "experience": 0.58,
-        "speciality": "bowler"
-    },
-    {
-        "name": "Player 11",
-        "bowling": 0.85,
-        "batting": 0.71,
-        "fielding": 0.37,
-        "running": 1.0,
-        "experience": 0.6,
-        "speciality": "all-rounder"
-    },
-    {
-        "name": "Player 12",
-        "bowling": 0.84,
-        "batting": 0.61,
-        "fielding": 0.19,
-        "running": 0.65,
-        "experience": 0.22,
-        "speciality": "all-rounder"
-    },
-    {
-        "name": "Player 13",
-        "bowling": 0.75,
-        "batting": 0.51,
-        "fielding": 0.43,
-        "running": 0.58,
-        "experience": 0.95,
-        "speciality": "all-rounder"
-    },
-    {
-        "name": "Player 14",
-        "bowling": 0.16,
-        "batting": 0.27,
-        "fielding": 0.95,
-        "running": 0.11,
-        "experience": 0.25,
-        "speciality": "batsman"
-    },
-    {
-        "name": "Player 15",
-        "bowling": 0.68,
-        "batting": 0.35,
-        "fielding": 0.8,
-        "running": 0.19,
-        "experience": 0.47,
-        "speciality": "bowler"
-    },
-    {
-        "name": "Player 16",
-        "bowling": 0.4,
-        "batting": 0.82,
-        "fielding": 0.7,
-        "running": 0.82,
+        "bowling": 0.11,
+        "batting": 0.7,
+        "fielding": 0.14,
+        "running": 0.45,
         "experience": 0.2,
         "speciality": "batsman"
     },
     {
-        "name": "Player 17",
-        "bowling": 0.38,
-        "batting": 0.85,
-        "fielding": 0.57,
-        "running": 0.86,
-        "experience": 0.76,
+        "name": "Player 8",
+        "bowling": 0.16,
+        "batting": 0.62,
+        "fielding": 0.44,
+        "running": 0.7,
+        "experience": 0.66,
         "speciality": "batsman"
     },
     {
-        "name": "Player 18",
-        "bowling": 0.17,
-        "batting": 0.26,
-        "fielding": 0.84,
-        "running": 0.91,
-        "experience": 0.97,
-        "speciality": "batsman"
-    },
-    {
-        "name": "Player 19",
-        "bowling": 0.97,
-        "batting": 0.74,
-        "fielding": 1.0,
-        "running": 0.8,
-        "experience": 0.32,
-        "speciality": "all-rounder"
-    },
-    {
-        "name": "Player 20",
-        "bowling": 0.83,
-        "batting": 0.82,
-        "fielding": 0.84,
-        "running": 0.12,
-        "experience": 0.23,
-        "speciality": "all-rounder"
-    },
-    {
-        "name": "Player 21",
-        "bowling": 0.73,
-        "batting": 0.66,
-        "fielding": 0.35,
-        "running": 0.55,
-        "experience": 0.32,
-        "speciality": "all-rounder"
-    },
-    {
-        "name": "Player 22",
-        "bowling": 0.42,
-        "batting": 0.45,
-        "fielding": 0.99,
-        "running": 0.87,
-        "experience": 0.7,
-        "speciality": "batsman"
-    },
-    {
-        "name": "Player 23",
-        "bowling": 0.36,
-        "batting": 0.71,
-        "fielding": 0.31,
-        "running": 0.23,
-        "experience": 0.43,
-        "speciality": "batsman"
-    },
-    {
-        "name": "Player 24",
-        "bowling": 0.56,
-        "batting": 0.38,
-        "fielding": 0.35,
-        "running": 0.13,
-        "experience": 0.31,
-        "speciality": "bowler"
-    },
-    {
-        "name": "Player 25",
-        "bowling": 1.0,
-        "batting": 0.93,
-        "fielding": 0.57,
-        "running": 0.99,
+        "name": "Player 9",
+        "bowling": 0.66,
+        "batting": 0.9,
+        "fielding": 0.81,
+        "running": 0.95,
         "experience": 0.99,
         "speciality": "all-rounder"
     },
     {
-        "name": "Player 26",
-        "bowling": 0.88,
-        "batting": 0.14,
-        "fielding": 0.54,
-        "running": 0.29,
+        "name": "Player 10",
+        "bowling": 0.6,
+        "batting": 0.54,
+        "fielding": 0.89,
+        "running": 0.95,
         "experience": 0.43,
+        "speciality": "all-rounder"
+    },
+    {
+        "name": "Player 11",
+        "bowling": 0.52,
+        "batting": 0.64,
+        "fielding": 0.27,
+        "running": 0.79,
+        "experience": 0.3,
+        "speciality": "all-rounder"
+    },
+    {
+        "name": "Player 12",
+        "bowling": 0.66,
+        "batting": 0.22,
+        "fielding": 0.82,
+        "running": 0.37,
+        "experience": 0.55,
+        "speciality": "bowler"
+    },
+    {
+        "name": "Player 13",
+        "bowling": 0.47,
+        "batting": 0.71,
+        "fielding": 1.0,
+        "running": 0.23,
+        "experience": 0.51,
+        "speciality": "batsman"
+    },
+    {
+        "name": "Player 14",
+        "bowling": 0.52,
+        "batting": 0.98,
+        "fielding": 1.0,
+        "running": 0.2,
+        "experience": 0.21,
+        "speciality": "all-rounder"
+    },
+    {
+        "name": "Player 15",
+        "bowling": 0.65,
+        "batting": 0.98,
+        "fielding": 0.62,
+        "running": 0.31,
+        "experience": 0.81,
+        "speciality": "all-rounder"
+    },
+    {
+        "name": "Player 16",
+        "bowling": 0.12,
+        "batting": 0.74,
+        "fielding": 0.99,
+        "running": 0.13,
+        "experience": 0.84,
+        "speciality": "batsman"
+    },
+    {
+        "name": "Player 17",
+        "bowling": 0.12,
+        "batting": 0.56,
+        "fielding": 0.6,
+        "running": 0.43,
+        "experience": 0.77,
+        "speciality": "batsman"
+    },
+    {
+        "name": "Player 18",
+        "bowling": 0.62,
+        "batting": 0.94,
+        "fielding": 0.45,
+        "running": 0.44,
+        "experience": 0.31,
+        "speciality": "all-rounder"
+    },
+    {
+        "name": "Player 19",
+        "bowling": 0.66,
+        "batting": 0.32,
+        "fielding": 0.38,
+        "running": 0.41,
+        "experience": 0.14,
+        "speciality": "bowler"
+    },
+    {
+        "name": "Player 20",
+        "bowling": 0.33,
+        "batting": 0.15,
+        "fielding": 0.67,
+        "running": 0.24,
+        "experience": 0.78,
+        "speciality": "bowler"
+    },
+    {
+        "name": "Player 21",
+        "bowling": 0.26,
+        "batting": 0.63,
+        "fielding": 0.59,
+        "running": 0.47,
+        "experience": 0.94,
+        "speciality": "batsman"
+    },
+    {
+        "name": "Player 22",
+        "bowling": 0.74,
+        "batting": 0.34,
+        "fielding": 0.17,
+        "running": 0.18,
+        "experience": 0.44,
+        "speciality": "bowler"
+    },
+    {
+        "name": "Player 23",
+        "bowling": 0.93,
+        "batting": 0.26,
+        "fielding": 0.41,
+        "running": 0.83,
+        "experience": 0.2,
+        "speciality": "bowler"
+    },
+    {
+        "name": "Player 24",
+        "bowling": 0.87,
+        "batting": 0.12,
+        "fielding": 0.24,
+        "running": 0.57,
+        "experience": 0.79,
+        "speciality": "bowler"
+    },
+    {
+        "name": "Player 25",
+        "bowling": 0.66,
+        "batting": 0.75,
+        "fielding": 0.35,
+        "running": 0.94,
+        "experience": 0.47,
+        "speciality": "all-rounder"
+    },
+    {
+        "name": "Player 26",
+        "bowling": 0.27,
+        "batting": 0.17,
+        "fielding": 0.11,
+        "running": 0.76,
+        "experience": 0.91,
         "speciality": "bowler"
     },
     {
         "name": "Player 27",
-        "bowling": 0.59,
-        "batting": 0.2,
-        "fielding": 0.35,
-        "running": 0.9,
-        "experience": 0.61,
-        "speciality": "bowler"
+        "bowling": 0.98,
+        "batting": 0.96,
+        "fielding": 0.49,
+        "running": 0.95,
+        "experience": 0.83,
+        "speciality": "all-rounder"
     },
     {
         "name": "Player 28",
-        "bowling": 0.27,
-        "batting": 0.72,
-        "fielding": 0.55,
-        "running": 0.13,
-        "experience": 0.3,
-        "speciality": "batsman"
+        "bowling": 0.78,
+        "batting": 0.6,
+        "fielding": 0.38,
+        "running": 0.47,
+        "experience": 0.83,
+        "speciality": "all-rounder"
     },
     {
         "name": "Player 29",
-        "bowling": 0.9,
-        "batting": 0.42,
-        "fielding": 0.23,
-        "running": 0.24,
-        "experience": 0.37,
-        "speciality": "bowler"
+        "bowling": 0.84,
+        "batting": 0.65,
+        "fielding": 0.91,
+        "running": 0.5,
+        "experience": 0.69,
+        "speciality": "all-rounder"
     },
     {
         "name": "Player 30",
-        "bowling": 0.76,
-        "batting": 0.69,
-        "fielding": 0.23,
-        "running": 0.55,
-        "experience": 0.27,
-        "speciality": "all-rounder"
+        "bowling": 0.72,
+        "batting": 0.46,
+        "fielding": 0.64,
+        "running": 0.19,
+        "experience": 0.81,
+        "speciality": "bowler"
     }
 ]
