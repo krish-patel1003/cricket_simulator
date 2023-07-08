@@ -22,7 +22,14 @@ class Team:
 
     def select_captain(self):
         # Select a captain from the team's players
-        pass
+        players = sorted(self.players, key=lambda x: x.experience, reverse=True)
+        max_skill_avg = 0
+        for player in players:
+            player_skill_avg = (player.batting + player.bowling + player.fielding + player.running)/4
+            if player_skill_avg > max_skill_avg:
+                self.captain = player
+                max_skill_avg = player_skill_avg
+        return self.captain 
 
     def send_next_player(self):
         # Select the next player to go to the field

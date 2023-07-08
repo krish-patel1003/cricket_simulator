@@ -23,6 +23,9 @@ def prepare_teams(teamA_name, teamB_name, field):
         teamA.set_home_advantage("away")
     else:
         teamB.set_home_advantage("away")
+    
+    teamA.select_captain()
+    teamB.select_captain()
 
     return teamA, teamB
 
@@ -86,9 +89,9 @@ def main():
     teamA, teamB = prepare_teams(teamA_name, teamB_name, field)
 
     print("Team Details: ")
-    print(f"{teamA.name}: ")
+    print(f"{teamA.name} - {teamA.captain}(C): ")
     teamA.print_team()
-    print(f"{teamB.name}: ")
+    print(f"{teamB.name} - {teamB.captain}(C): ")
     teamB.print_team()
 
 
