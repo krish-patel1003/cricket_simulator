@@ -99,6 +99,10 @@ def main():
     # Prepare the match and toss
     match = prepare_match(teamA, teamB, field)
 
+    overs = int(input("Enter the number of overs: "))
+    match.set_overs(overs)
+    print("Match Details: ", match.__dict__)
+
     # Start the match
     match.start_match()
 

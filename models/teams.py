@@ -31,14 +31,20 @@ class Team:
                 max_skill_avg = player_skill_avg
         return self.captain 
 
-    def send_next_player(self):
-        # Select the next player to go to the field
-        pass
+    def next_batsman(self, wickets):
+        # Select the next batsmen to go to the field
+        batsmen = sorted(self.players[wickets:], key=lambda x: x.batting, reverse=True)
+        return batsmen[0]
 
-    def choose_bowler(self):
+
+    def select_bowler(self, over):
         # Choose a bowler for the next over
-        pass
+        bowlers = sorted(self.players, key=lambda x: x.bowling, reverse=True)
+        index = over%len(bowlers)
+        return bowlers[index]
+
 
     def decide_batting_order(self):
         # Decide the batting order
-        pass
+        batting_order = sorted(self.players, key=lambda x: x.batting, reverse=True)
+        return batting_order
