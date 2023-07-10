@@ -43,9 +43,11 @@ class Match:
         team1_score = self.match_info[f"{self.team1.name}_score"]
         team2_score = self.match_info[f"{self.team2.name}_score"]
         if team1_score > team2_score:
-            print(f"{self.team1.name} won")
+            self.update_match_info("winner", f"{self.team1.name}")
         else:
-            print(f"{self.team2.name} won")
+            self.update_match_info("winner", f"{self.team2.name}")
+        
+        self.get_match_summary()
         # You can display the final score, wickets, overs, etc.
 
     def play_innings(self):
