@@ -9,9 +9,6 @@ def create_teams(players, teamA_name, teamB_name):
     teamA = teams.Team(teamA_name)
     teamB = teams.Team(teamB_name)
 
-
-    # Logic for Auto-balancing teams       
-
     # Add players to the teams
     for i in range(0, len(players), 2):
         teamA.add_player(players[i])
