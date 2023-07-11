@@ -21,7 +21,7 @@ class Umpire:
         if ball_result == "caught":
             fielder = random.choice(bowling_team.players)
             if fielder.fielding > 0.5:
-                umpires_decision = "out"
+                umpires_decision = "caught"
             else:
                 random_ball_result = random.choice(
                     batsman_on_strike.SCORE_TYPES)
