@@ -30,18 +30,18 @@ def prepare_teams(teamA_name, teamB_name, field):
     return teamA, teamB
 
 
-def prepare_innings(team_to_toss, other_team, match):
+def prepare_innings(team_won_toss, team_loose_toss, match):
 
     bat_or_bowl = int(
-        input(f"{team_to_toss.name} Choose bat(0) or bowl(1): "))
+        input(f"{team_won_toss.name} Choose bat(0) or bowl(1): "))
     if bat_or_bowl == 0:
         match.commentator.commentary(
-            f"{team_to_toss.name} chose to bat first!")
-        match.set_innings(team_to_toss, other_team)
+            f"{team_won_toss.name} chose to bat first!")
+        match.set_innings(team_won_toss, team_loose_toss)
     else:
         match.commentator.commentary(
-            f"{team_to_toss.name} chose to bat first!")
-        match.set_innings(other_team, team_to_toss)
+            f"{team_won_toss.name} chose to bowl first!")
+        match.set_innings(team_loose_toss, team_won_toss)
 
 
 def prepare_match(teamA, teamB, field):
