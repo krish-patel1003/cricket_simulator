@@ -18,6 +18,10 @@ def play_ball_result(batsman, bowler, ball_result_types):
 
     index = int(result_probability*(len(ball_result_types) * 10)) % len(ball_result_types)
 
+    if ball_result_types[index] in batsman.SCORE_TYPES[:3]:
+        index = int(result_probability*(batsman.running)*(300)) % 3
+        return batsman.SCORE_TYPES[index]
+
     return ball_result_types[index]
 
 

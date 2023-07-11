@@ -1,8 +1,6 @@
 import os
 import sys
 
-
-
 import models.umpire as umpire
 
 
@@ -17,7 +15,7 @@ class Match:
         self.overs = None
         self.match_info = {}
         self.umpire = umpire.Umpire()
-    
+
     def set_overs(self, overs):
         # Set the number of overs for the match
         self.overs = overs
@@ -46,7 +44,7 @@ class Match:
             self.update_match_info("winner", f"{self.team1.name}")
         else:
             self.update_match_info("winner", f"{self.team2.name}")
-        
+
         self.get_match_summary()
         # You can display the final score, wickets, overs, etc.
 
@@ -54,23 +52,21 @@ class Match:
         # Simulate the innings
         print(
             f"Innings {self.current_innings} - {self.current_batting_team.name} batting")
-        
+
         score = 0
         wickets = 0
         extras = 0
-        
+
         self.update_match_info("innings", self.current_innings)
         self.update_match_info("batting_team", self.current_batting_team.name)
         self.update_match_info("bowling_team", self.current_bowling_team.name)
-        self.update_match_info(f"{self.current_batting_team.name}_score", 0)    
+        self.update_match_info(f"{self.current_batting_team.name}_score", 0)
         self.update_match_info(f"{self.current_batting_team.name}_wickets", 0)
         self.update_match_info(f"{self.current_batting_team.name}_extras", 0)
         self.update_match_info(f"Innings {self.current_innings}", {})
 
-
-        
         batsman_on_strike, batsman_on_non_strike = self.current_batting_team.decide_batting_order()[0:2]
-        
+
         for over in range(self.overs):
             bowler = self.current_bowling_team.select_bowler(over)
 
@@ -89,7 +85,8 @@ class Match:
                 if ball_result == "wide" or ball_result == "no ball":
                     ball_again = True
                     while ball_again:
-                        self.update_over_info(over+1, "ball_again", ball_result)
+                        self.update_over_info(
+                            over+1, "ball_again", ball_result)
                         print("Ball again")
                         score += 1
                         extras += 1
@@ -97,9 +94,9 @@ class Match:
 
                         if ball_result == "no ball" and ball_again_result in ["caught", "bowled", "lbw", "stumped"]:
                             ball_result = "dot"
-                            ball_again =  False
+                            ball_again = False
                             break
-                        
+
                         print(ball_result)
                         if ball_again_result != "wide" and ball_again_result != "no ball":
                             ball_result = ball_again_result
@@ -113,13 +110,14 @@ class Match:
                     wickets += 1
                     self.update_match_info(
                         f"{self.current_batting_team.name}_wickets", wickets)
-                    
+
                     if wickets == 10:
                         print("All out!")
                         break
-                    batsman_on_strike = self.current_batting_team.next_batsman(wickets)
+                    batsman_on_strike = self.current_batting_team.next_batsman(
+                        wickets)
                     print(f"New batsman: {batsman_on_strike.name}")
-                
+
                 if ball_result in batsman_on_strike.SCORE_TYPES:
                     score += int(ball_result.split(" ")[0])
 
@@ -127,14 +125,13 @@ class Match:
                 self.update_over_info(over+1, ball, ball_result)
                 self.update_match_info(
                     f"{self.current_batting_team.name}_score", score)
-                self.update_match_info(f"{self.current_batting_team.name}_extras", extras)
+                self.update_match_info(
+                    f"{self.current_batting_team.name}_extras", extras)
 
-            print(self.get_match_info())   
+            print(self.get_match_info())
 
         self.change_innings()
         return self.match_info
-        
-        
 
     def get_match_summary(self):
         # Display the match summary
@@ -148,15 +145,16 @@ class Match:
     def get_match_info(self):
         # Return the match info
         return self.match_info
-    
+
     def update_match_info(self, key, value):
         # Update the match info
         self.match_info[key] = value
         return self.match_info
-    
+
     def update_over_info(self, over, ball, ball_result):
         # Update the over info
-        over = self.match_info[f"Innings {self.current_innings}"]["over - "+str(over)]
+        over = self.match_info[f"Innings {self.current_innings}"]["over - "+str(
+            over)]
         over.setdefault(ball, ball_result)
         return self.match_info
 
@@ -169,7 +167,7 @@ class Match:
         # Start the match
         print("Match Started!")
         self.play_innings()
-    
+
     def get_match_info(self):
         # Return the match info
         return self.match_info

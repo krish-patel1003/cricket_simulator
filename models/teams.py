@@ -34,7 +34,6 @@ class Team:
     def next_batsman(self, wickets):
         # Select the next batsmen to go to the field
         batsmen = sorted(self.players, key=lambda x: x.batting,reverse=True)[1+wickets:]
-        
         return batsmen[0]
 
 

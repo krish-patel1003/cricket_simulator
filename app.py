@@ -23,7 +23,7 @@ def prepare_teams(teamA_name, teamB_name, field):
         teamA.set_home_advantage("away")
     else:
         teamB.set_home_advantage("away")
-    
+
     teamA.select_captain()
     teamB.select_captain()
 
@@ -42,12 +42,13 @@ def prepare_innings(team_to_toss, other_team, match):
         match.set_innings(other_team, team_to_toss)
 
 
-
-
 def prepare_match(teamA, teamB, field):
 
     # Create a match
     match = matchs.Match(teamA, teamB, field)
+    match.update_match_info("teamA", teamA.name)
+    match.update_match_info("teamB", teamB.name)
+
     team_to_toss = random.choice([0, 1])
 
     # Toss
@@ -57,19 +58,21 @@ def prepare_match(teamA, teamB, field):
     else:
         team_to_toss = teamB
         other_team = teamA
-    
 
-    toss_side_pick = int(input(f"{team_to_toss.name} Choose heads(0) or tails(1): "))
+    toss_side_pick = int(
+        input(f"{team_to_toss.name} Choose heads(0) or tails(1): "))
     toss_result = match.umpire.toss(toss_side_pick)
 
     if toss_result:
         print(f"{team_to_toss.name} won the toss!")
+        match.update_match_info("toss", f"{team_to_toss.name} won the toss!")
         prepare_innings(team_to_toss, other_team, match)
 
     else:
         print(f"{other_team.name} won the toss!")
-        prepare_innings(other_team, team_to_toss, match)
-       
+        match.update_match_info("toss", f"{other_team.name} won the toss!")
+        prepare_innings(other_team, team_to_toss, match)   
+
     return match
 
 
@@ -94,24 +97,17 @@ def main():
     print(f"{teamB.name} - {teamB.captain}(C): ")
     teamB.print_team()
 
-
-    
     # Prepare the match and toss
     match = prepare_match(teamA, teamB, field)
 
     overs = int(input("Enter the number of overs: "))
     match.set_overs(overs)
-    print("Match Details: ", match.__dict__)
+    match.update_match_info("overs", overs)
+    print("Match Details: ", match.get_match_info())
 
     # Start the match
     match.start_match()
 
 
-
-
 if __name__ == '__main__':
     main()
-
-
-
-
