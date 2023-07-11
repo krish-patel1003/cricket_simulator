@@ -2,6 +2,7 @@ import os
 import sys
 
 import models.umpire as umpire
+import models.commentator as commentator
 
 
 class Match:
@@ -15,6 +16,7 @@ class Match:
         self.overs = None
         self.match_info = {}
         self.umpire = umpire.Umpire()
+        self.commentator = commentator.Commentator("John", self)
 
     def set_overs(self, overs):
         # Set the number of overs for the match
@@ -37,20 +39,22 @@ class Match:
 
     def end_match(self):
         # End the match and display the final result
-        print("Match ended.")
+        self.commentator.commentary("Match ended.")
         team1_score = self.match_info[f"{self.team1.name}_score"]
         team2_score = self.match_info[f"{self.team2.name}_score"]
         if team1_score > team2_score:
             self.update_match_info("winner", f"{self.team1.name}")
+            self.commentator.commentary(f"winner {self.team1.name}!")
         else:
             self.update_match_info("winner", f"{self.team2.name}")
+            self.commentator.commentary(f"winner {self.team2.name}!")
 
         self.get_match_summary()
         # You can display the final score, wickets, overs, etc.
 
     def play_innings(self):
         # Simulate the innings
-        print(
+        self.commentator.commentary(
             f"Innings {self.current_innings} - {self.current_batting_team.name} batting")
 
         score = 0
@@ -65,7 +69,8 @@ class Match:
         self.update_match_info(f"{self.current_batting_team.name}_extras", 0)
         self.update_match_info(f"Innings {self.current_innings}", {})
 
-        batsman_on_strike, batsman_on_non_strike = self.current_batting_team.decide_batting_order()[0:2]
+        batsman_on_strike, batsman_on_non_strike = self.current_batting_team.decide_batting_order()[
+            0:2]
 
         for over in range(self.overs):
             bowler = self.current_bowling_team.select_bowler(over)
@@ -76,9 +81,9 @@ class Match:
                 batsman_on_strike, batsman_on_non_strike = batsman_on_non_strike, batsman_on_strike
 
             for ball in range(1, 7):
-                print(f"Over {over}.{ball}")
-                print(f"Bowler: {bowler.name}")
-                print(
+                self.commentator.commentary(f"Over {over}.{ball}")
+                self.commentator.commentary(f"Bowler: {bowler.name}")
+                self.commentator.commentary(
                     f"Batsmen: {batsman_on_strike.name} and {batsman_on_non_strike.name}")
                 ball_result = batsman_on_strike.play_ball(bowler)
 
@@ -104,37 +109,39 @@ class Match:
 
                 if ball_result in ["1 run", "3 runs"]:
                     batsman_on_non_strike, batsman_on_strike = batsman_on_strike, batsman_on_non_strike
-                
+
                 if ball_result in ["caught", "run out"]:
                     umpires_decision = self.umpire.make_decision(
                         batsman_on_strike, batsman_on_non_strike, self.current_bowling_team, ball_result)
-                    print(f"umpires_decision: {umpires_decision}")
+                    self.commentator.commentary(
+                        f"umpires_decision: {umpires_decision}")
                     ball_result = umpires_decision
 
                 if ball_result in batsman_on_strike.OUT_TYPES:
-                    print(f"{batsman_on_strike.name} is out!")
+                    self.commentator.commentary(f"{batsman_on_strike.name} is out!")
                     wickets += 1
                     self.update_match_info(
                         f"{self.current_batting_team.name}_wickets", wickets)
 
                     if wickets == 10:
-                        print("All out!")
+                        self.commentator.commentary("All out!")
                         break
                     batsman_on_strike = self.current_batting_team.next_batsman(
                         wickets)
-                    print(f"New batsman: {batsman_on_strike.name}")
+                    self.commentator.commentary(
+                        f"New batsman: {batsman_on_strike.name}")
 
                 if ball_result in batsman_on_strike.SCORE_TYPES:
                     score += int(ball_result.split(" ")[0])
 
-                print("ball_result: ", ball_result)
+                self.commentator.commentary(f"ball_result:  {ball_result}")
                 self.update_over_info(over+1, ball, ball_result)
                 self.update_match_info(
                     f"{self.current_batting_team.name}_score", score)
                 self.update_match_info(
                     f"{self.current_batting_team.name}_extras", extras)
 
-            print(self.get_match_info())
+            self.commentator.commentary(self.get_match_info())
 
         self.change_innings()
         return self.match_info

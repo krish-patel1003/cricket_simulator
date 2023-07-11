@@ -35,10 +35,12 @@ def prepare_innings(team_to_toss, other_team, match):
     bat_or_bowl = int(
         input(f"{team_to_toss.name} Choose bat(0) or bowl(1): "))
     if bat_or_bowl == 0:
-        print(f"{team_to_toss.name} chose to bat first!")
+        match.commentator.commentary(
+            f"{team_to_toss.name} chose to bat first!")
         match.set_innings(team_to_toss, other_team)
     else:
-        print(f"{team_to_toss.name} chose to bowl first!")
+        match.commentator.commentary(
+            f"{team_to_toss.name} chose to bat first!")
         match.set_innings(other_team, team_to_toss)
 
 
@@ -64,13 +66,13 @@ def prepare_match(teamA, teamB, field):
     toss_result = match.umpire.toss(toss_side_pick)
 
     if toss_result:
-        print(f"{team_to_toss.name} won the toss!")
         match.update_match_info("toss", f"{team_to_toss.name} won the toss!")
+        match.commentator.toss_commentary(match)
         prepare_innings(team_to_toss, other_team, match)
 
     else:
-        print(f"{other_team.name} won the toss!")
         match.update_match_info("toss", f"{other_team.name} won the toss!")
+        match.commentator.toss_commentary(match)
         prepare_innings(other_team, team_to_toss, match)   
 
     return match
