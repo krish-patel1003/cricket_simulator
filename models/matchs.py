@@ -104,6 +104,12 @@ class Match:
 
                 if ball_result in ["1 run", "3 runs"]:
                     batsman_on_non_strike, batsman_on_strike = batsman_on_strike, batsman_on_non_strike
+                
+                if ball_result in ["caught", "run out"]:
+                    umpires_decision = self.umpire.make_decision(
+                        batsman_on_strike, batsman_on_non_strike, self.current_bowling_team, ball_result)
+                    print(f"umpires_decision: {umpires_decision}")
+                    ball_result = umpires_decision
 
                 if ball_result in batsman_on_strike.OUT_TYPES:
                     print(f"{batsman_on_strike.name} is out!")
